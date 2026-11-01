@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mega Ferretería Industrial - Inventario</title>
+    <style>
+        :root {
+            --primary-color: #e67e22; /* Naranja Ferretero */
+            --secondary-color: #2c3e50; /* Gris Industrial */
+            --bg-light: #f4f6f7;
+            --text-dark: #333333;
+            --success: #27ae60;
+            --warning: #f1c40f;
+            --danger: #c0392b;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Título Grande que especifica el negocio */
+        h1.business-title {
+            font-size: 2.8rem;
+            color: var(--secondary-color);
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+            border-bottom: 4px solid var(--primary-color);
+            padding-bottom: 15px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        /* Párrafo de información del negocio */
+        .info-paragraph {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #555;
+            text-align: justify;
+            background: #ebedef;
+            padding: 20px;
+            border-left: 5px solid var(--primary-color);
+            border-radius: 4px;
+            margin-bottom: 30px;
+        }
+
+        /* Contenedor de Imágenes colocadas después del párrafo */
+        .image-gallery {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        .image-box {
+            flex: 1;
+            max-width: 45%;
+            text-align: center;
+            background: #fff;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            padding: 10px;
+        }
+
+        .image-box img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            object-fit: cover;
+        }
+
+        .image-box p {
+            margin: 8px 0 0 0;
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+
+        /* Estilos de las tablas de movimiento */
+        h2.table-section-title {
+            color: var(--secondary-color);
+            border-bottom: 2px solid #bdc3c7;
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+
+        .table-responsive {
+            overflow-x: auto;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+            background: #fff;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: var(--secondary-color);
+            color: white;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        tr:hover {
+            background-color: #f1f4f6;
+        }
+
+        /* Badges de Color para Rotación y Movimiento */
+        .badge {
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            color: white;
+            display: inline-block;
+        }
+
+        .badge.alta { background-color: var(--success); }
+        .badge.media { background-color: var(--warning); color: #333; }
+        .badge.baja { background-color: var(--danger); }
+        .badge.entrada { background-color: #3498db; }
+        .badge.salida { background-color: #9b59b6; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- TÍTULO GRANDE DEL NEGOCIO -->
+        <h1 class="business-title">Mega Ferretería Industrial</h1>
+        <div class="subtitle">Catálogo Técnico y Control de Movimiento de Accesorios</div>
+
+        <!-- PÁRRAFO DE INFORMACIÓN DEL NEGOCIO -->
+        <p class="info-paragraph">
+            En <strong>Mega Ferretería Industrial</strong> proveemos soluciones integrales en tornillería, fijaciones y accesorios mecánicos de alta resistencia. Atendemos las demandas más exigentes de la construcción y manufactura, garantizando la trazabilidad técnica de cada lote mediante sistemas automatizados de control de inventarios. Nuestro compromiso es asegurar que su taller u obra nunca detenga su marcha por falta de componentes esenciales.
+        </p>
+
+        <!-- DOS IMÁGENES COLOCADAS DESPUÉS DEL PÁRRAFO -->
+        <div class="image-gallery">
+            <div class="image-box">
+                <!-- Reemplazar 'src' con el enlace real de tus imágenes si lo deseas -->
+                <img src="https://ferremundojc.com" alt="Accesorios y Herramientas Eléctricas">
+                <p>Estantería General de Accesorios</p>
+            </div>
+            <div class="image-box">
+                <img src="https://tornillosguate.com/" alt="Tornillería y Conexiones Industriales">
+                <p>Variedad de Pernos y Fijaciones</p>
+            </div>
+        </div>
+
+        <!-- TABLAS DE MOVIMIENTO Y CONTROL -->
+        <h2 class="table-section-title">📦 Resumen de Existencias y Rotación</h2>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Código SKU</th>
+                        <th>Accesorio / Artículo</th>
+                        <th>Medida / Tipo</th>
+                        <th>Stock Actual</th>
+                        <th>Nivel de Rotación</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>PER-HEX-001</strong></td>
+                        <td>Perno Hexagonal Grado 8</td>
+                        <td>1/2" x 3"</td>
+                        <td>1,200 uds</td>
+                        <td><span class="badge alta">Muy Alta</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>DIS-COR-045</strong></td>
+                        <td>Disco de Corte Metal</td>
+                        <td>4.5" Extra Fino</td>
+                        <td>450 uds</td>
+                        <td><span class="badge alta">Alta</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>CIN-TEF-012</strong></td>
+                        <td>Cinta Selladora de Teflón</td>
+                        <td>1/2" x 260"</td>
+                        <td>800 uds</td>
+                        <td><span class="badge media">Media</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>TAL-PER-120</strong></td>
+                        <td>Rotomartillo Profesional 20V</td>
+                        <td>Industrial</td>
+                        <td>15 uds</td>
+                        <td><span class="badge baja">Baja</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2 class="table-section-title">🔄 Últimos Movimientos de Kardex (Entradas / Salidas)</h2>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Código SKU</th>
+                        <th>Tipo de Movimiento</th>
+                        <th>Cantidad</th>
+                        <th>Responsable</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>01/11/2026</td>
+                        <td>PER-HEX-001</td>
+                        <td><span class="badge entrada">Entrada (Proveedor)</span></td>
+                        <td>+500 uds</td>
+                        <td>Bodega Central</td>
+                    </tr>
+                    <tr>
+                        <td>01/11/2026</td>
+                        <td>DIS-COR-045</td>
+                        <td><span class="badge salida">Salida (Venta Mostrador)</span></td>
+                        <td>-50 uds</td>
+                        <td>Caja 02</td>
+                    </tr>
+                    <tr>
+                        <td>31/10/2026</td>
+                        <td>TAL-PER-120</td>
+                        <td><span class="badge entrada">Entrada (Importación)</span></td>
+                        <td>+5 uds</td>
+                        <td>Supervisor Logística</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</body>
+</html>
+
